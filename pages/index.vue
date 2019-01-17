@@ -23,11 +23,22 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Logo from '~/components/Logo.vue';
+import api from '@/api/api.js';
+
+console.log(api);
 
 export default {
   components: {
     Logo
+  },
+  asyncData () {
+
+	return api.getPosts()
+	  .then((res) => {
+	    console.log(res);
+		// return { title: res.data.title }
+	  })
   }
 }
 </script>

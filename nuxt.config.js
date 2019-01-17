@@ -3,6 +3,12 @@ const pkg = require('./package')
 module.exports = {
   mode: 'universal',
 
+  env: {
+    dev: (process.env.NODE_ENV !== 'production'),
+    baseUrl: process.env.NODE_ENV !== 'production' ? 'http://localhost:1337/': 'https.graphicon.de/api',
+
+  },
+
   /*
   ** Headers of the page
   */
