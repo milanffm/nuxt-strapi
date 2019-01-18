@@ -18,11 +18,13 @@ export const mutations = {
 
 export const actions = {
   async get({commit}) {
+   //  console.log('ALL POSTS', this);
 	await this.$axios.get(process.env.baseUrl + 'posts')
 	  .then((res) => {
-		if (res.status === 200) {
-		  commit('set', res.data)
-		}
+        // console.log('STORE GET POST', res);
+        if (res.status === 200) {
+	      commit('set', res.data)
+        }
 	  })
   },
   async show({commit}, params) {
@@ -36,4 +38,8 @@ export const actions = {
   async set({commit}, post) {
 	await commit('set', post)
   }
+}
+
+export const getters = {
+  getPosts: (state) => state.list,
 }

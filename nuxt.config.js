@@ -5,7 +5,7 @@ module.exports = {
 
   env: {
     dev: (process.env.NODE_ENV !== 'production'),
-    baseUrl: process.env.NODE_ENV !== 'production' ? 'http://localhost:1337/': 'https.graphicon.de/api',
+    baseUrl: process.env.NODE_ENV !== 'production' ? 'http://localhost:1337/': 'http://localhost:1337/',
 
   },
 
@@ -53,6 +53,9 @@ module.exports = {
         'assets/scss/variables.scss'
       ]]
   ],
+  router: {
+	middleware: ['get-api'],
+  },
   /*
   ** Axios module configuration
   */

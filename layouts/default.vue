@@ -6,7 +6,7 @@
 </template>
 
 <style lang="scss">
-	html{
+	html {
 		font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
 		Roboto, 'Helvetica Neue', Arial, sans-serif;
 		font-size: 16px;
@@ -39,8 +39,11 @@
 </style>
 <script>
 import AppHeader from '../components/header';
+// import myMixin from '@/mixins/api-call';
+
 
 export default {
-  components: {AppHeader}
+  components: {AppHeader},
+  //mixins: [myMixin],
 };
 </script>

@@ -17,9 +17,6 @@
 export default {
 	name: 'about',
 	transition: 'slide-left',
-	  async fetch({store}) {
-		await store.dispatch('post/get');
-	  },
 }
 </script>
 

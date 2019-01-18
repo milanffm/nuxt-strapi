@@ -31,21 +31,22 @@ export default {
   components: {
     Logo
   },
-  async fetch({store}) {
-	await store.dispatch('post/get');
+  asyncData ({ app, params, store }) {
+    return store.dispatch('post/get').then(
+      console.log('GEHT PSITSSSS')
+    );
   },
   computed: {
 	...mapState({
-	  posts: state => state.post.list,
-	  post: state => state.post.post
+	  posts: state => state.post.list
 	})
   },
   mounted() {
 	/**
 	 * on init load all posts and news
 	 */
-	console.log(this.$el.querySelector('.posts').offsetHeight);
-	console.log(this.posts);
+	console.log('HEIGHT',this.$el.querySelector('.posts').offsetHeight);
+	// console.log(this.posts);
   },
 }
 </script>
