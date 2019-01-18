@@ -8,6 +8,7 @@
       <h2 class="subtitle">
         My breathtaking Nuxt.js project
       </h2>
+      <div class="posts">{{posts}}</div>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -24,22 +25,28 @@
 
 <script>
 import Logo from '~/components/Logo.vue';
-import api from '@/api/api.js';
-
-console.log(api);
+import { mapState } from 'vuex'
 
 export default {
   components: {
     Logo
   },
-  asyncData () {
-
-	return api.getPosts()
-	  .then((res) => {
-	    console.log(res);
-		// return { title: res.data.title }
-	  })
-  }
+  async fetch({store}) {
+	await store.dispatch('post/get');
+  },
+  computed: {
+	...mapState({
+	  posts: state => state.post.list,
+	  post: state => state.post.post
+	})
+  },
+  mounted() {
+	/**
+	 * on init load all posts and news
+	 */
+	console.log(this.$el.querySelector('.posts').offsetHeight);
+	console.log(this.posts);
+  },
 }
 </script>
 
