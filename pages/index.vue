@@ -31,20 +31,24 @@ export default {
   components: {
     Logo
   },
-  asyncData ({ app, params, store }) {
-    return store.dispatch('post/get').then(
-      console.log('GEHT PSITSSSS')
-    );
+  async asyncData(ctx) {
+	return {
+	  posts: await ctx.app.$postRepository.index()
+	}
   },
-  computed: {
-	...mapState({
-	  posts: state => state.post.list
-	})
-  },
+ // computed: {
+//	...mapState({
+//	  posts: state => state.post.list
+//	})
+ // },
   mounted() {
 	/**
 	 * on init load all posts and news
 	 */
+	this.$postRepository.index().then( res => {
+	  console.log(res);
+      }
+    );
 	console.log('HEIGHT',this.$el.querySelector('.posts').offsetHeight);
 	// console.log(this.posts);
   },

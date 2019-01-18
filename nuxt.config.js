@@ -5,7 +5,7 @@ module.exports = {
 
   env: {
     dev: (process.env.NODE_ENV !== 'production'),
-    baseUrl: process.env.NODE_ENV !== 'production' ? 'http://localhost:1337/': 'http://localhost:1337/',
+
 
   },
 
@@ -27,7 +27,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#ffdd00' },
 
   /*
   ** Global CSS ans SCSS
@@ -39,8 +39,7 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [
-  ],
+  plugins: ['~/plugins/repository'],
 
   /*
   ** Nuxt.js modules
@@ -61,6 +60,7 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    baseURL: process.env.NODE_ENV !== 'production' ? 'http://localhost:1337/': 'http://localhost:1337/',
   },
 
   /*
