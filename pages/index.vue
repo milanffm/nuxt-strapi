@@ -54,8 +54,8 @@ export default {
 		// 		console.log(res);
 		// 	}
 		// );
-		// console.log('HEIGHT', this.$el.querySelector('.posts').offsetHeight);
-		// console.log(this.posts);
+		console.log('HEIGHTXXL ', this.$el.querySelector('.posts').offsetHeight);
+		console.log(this.posts);
 	},
 }
 </script>
