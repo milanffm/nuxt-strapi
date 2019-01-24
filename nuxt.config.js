@@ -53,7 +53,7 @@ module.exports = {
       ]]
   ],
   router: {
-	middleware: ['get-api'],
+	// middleware: ['get-api'],
   },
   /*
   ** Axios module configuration

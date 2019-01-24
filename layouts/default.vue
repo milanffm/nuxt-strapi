@@ -43,7 +43,7 @@ import AppHeader from '../components/header';
 
 
 export default {
-  components: {AppHeader},
-  //mixins: [myMixin],
+	components: {AppHeader},
+	//middleware: ['preload-posts']
 };
 </script>
