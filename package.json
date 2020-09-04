@@ -20,7 +20,7 @@
     "nuxt": "^2.6.2"
   },
   "devDependencies": {
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "nodemon": "^1.11.0",
     "nuxt-sass-resources-loader": "^2.0.5",
     "sass-loader": "^7.1.0",
